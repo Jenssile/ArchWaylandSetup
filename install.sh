@@ -3,6 +3,10 @@
 # Default values
 VERBOSE=false
 DRY_RUN=false
+USERNAME="jeeb"
+HYPERLAND_CONFIG_DIR="/home/$USERNAME/.config/hypr"
+AUTOSTART_FILE="$HYPERLAND_CONFIG_DIR/autostart.conf"
+SDDM_MIN_VERSION="0.20.0"
 
 # Help message
 print_help() {
@@ -12,6 +16,10 @@ print_help() {
 	echo "  -v, --verbose	Enable verbose output"
 	echo "  -d, --dry-run	Show what would be doen, without doing it"
 	echo "  -h, --help	Show this help message and exit"
+}
+
+log() {
+	$VERBOSE && echo "$@"
 }
 
 # input flag parseing
@@ -59,10 +67,16 @@ run_cmd() {
 	fi
 }
 
-if $VERBOSE; then
-	echo "Verbose output enabled."
-fi
+log "Verbose output enabled"
 
-echo "rest of scrit from here"
+### Check/install dependancies
+for pkg in sddm hyprland; do
+	if ! command -v "$pkg" &>/dev/null; then
+		log "X $pkg not found. installing ..."
+		run_cmd "sudo pacman -Syu --noconfirm $pkg"
+	else
+		log "* $pkg is already installed."
+	fi
+done
 
-run_cmd "touch ./test.txt"
+### Check SDDM version (make sure its greater than or equal to 0.20.0)
