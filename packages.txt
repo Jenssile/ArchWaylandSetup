@@ -1,0 +1,1 @@
+lazygit, btop, nano, alacritty, firefox, discord, nvm, pipewire, wireplumber, pipewire-pulse, pavucontrol, alsa-utils
