@@ -1,0 +1,11 @@
+{
+  "custom/tmux": {
+    "exec": "~/.config/waybar/scripts/tmux_sessions.sh",
+    "interval": 10,
+    "return-type": "json",
+    "format": "{}",
+    "env": {
+      "TMUX_MAX_SESSIONS": "3"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+@define-color waybar-foreground #ffffff;
+@define-color tmux-attached-color #8ec07c;
+@define-color tmux-detached-color #fabd2f;
+@define-color tmux-none-color #fb4934;
+
+#custom-tmux {
+  padding: 0 10px;
+  border-style: solid;
+  border-width: 0 0 2px 0;                  /* Only bottom border */
+  border-color: transparent;                /* Default to transparent */
+  color: @waybar-foreground;                /* Default text color */
+}
+
+/* Active tmux session with at least one attached client */
+.tmux-attached {
+  border-bottom-color: @tmux-attached-color;
+  color: @tmux-attached-color;
+}
+
+/* Sessions exist but none attached */
+.tmux-detached {
+  border-bottom-color: @tmux-detached-color;
+  color: @tmux-detached-color;
+}
+
+/* No tmux sessions at all */
+.tmux-none {
+  border-bottom-color: @tmux-none-color;
+  color: @tmux-none-color;
+}
