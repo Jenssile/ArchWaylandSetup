@@ -1,7 +1,15 @@
 @define-color waybar-foreground #ffffff;
+@define-color waybar-foreground-black #000000;
 @define-color tmux-attached-color #8ec07c;
 @define-color tmux-detached-color #fabd2f;
 @define-color tmux-none-color #fb4934;
+@define-color workspace-color #ffffff;
+
+* {
+  font-weight: bold;
+  font-style: normal;
+  font-size: 16px;
+}
 
 #custom-tmux {
   padding: 0 10px;
@@ -14,17 +22,48 @@
 /* Active tmux session with at least one attached client */
 .tmux-attached {
   border-bottom-color: @tmux-attached-color;
-  color: @tmux-attached-color;
 }
 
 /* Sessions exist but none attached */
 .tmux-detached {
   border-bottom-color: @tmux-detached-color;
-  color: @tmux-detached-color;
 }
 
 /* No tmux sessions at all */
 .tmux-none {
   border-bottom-color: @tmux-none-color;
-  color: @tmux-none-color;
+}
+
+/* -----------------------------------------------------
+ * Workspaces
+ * ----------------------------------------------------- */
+
+#workspaces {
+    margin: 5px 1px 6px 1px;
+    padding: 0px 1px;
+    border-width: 0 0 2px 0;
+    boder-style: solid;
+    border-color: transparent;
+    color: @waybar-foreground-black;
+}
+
+#workspaces button {
+    padding: 0px 5px;
+    margin: 4px 3px;
+    color: @waybar-foreground;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active {
+    color: @waybar-foreground-black;
+    background: tranparent;
+    border-bottom-color: @workspace-color;
+    min-width: 40px;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button:hover {
+    color: @waybar-foreground-black;
+    background: transparent;
+    border-bottom-color: @workspace-color;
 }
