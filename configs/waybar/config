@@ -1,11 +1,33 @@
 {
-  "custom/tmux": {
-    "exec": "~/.config/waybar/scripts/tmux_sessions.sh",
-    "interval": 10,
-    "return-type": "json",
-    "format": "{}",
-    "env": {
-      "TMUX_MAX_SESSIONS": "3"
-    }
-  }
+    // "layer": "top", // Waybar at top layer
+
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+
+    "height": 46, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+
+    "spacing": 4, // Gaps between modules (4px)
+    // Choose the order of the modules
+
+    // Load Modules
+    "include": [
+        "~/.config/waybar/modules.json"
+    ],
+    "modules-left": [
+        "hyprland/window"
+    ],
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        //"mpd",
+        "pulseaudio",
+        "network",
+        //"cpu",
+        //"memory",
+        "battery",
+        "clock",
+        //"tray",
+        "custom/exit"
+    ]
 }
