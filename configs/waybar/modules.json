@@ -7,5 +7,12 @@
     "env": {
       "TMUX_MAX_SESSIONS": "3"
     }
-  }
+  },
+  // Power Menu
+  "custom/exit": {
+    "format": "",
+    "tooltip-format": "Powermenu",
+    "on-click": "wlogout -b 4",
+    "tooltip": false
+  },
 }

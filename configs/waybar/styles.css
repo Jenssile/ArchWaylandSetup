@@ -6,9 +6,11 @@
 @define-color workspace-color #ffffff;
 
 * {
+  font-family: "FiraCode Nerd Font Mono", monospace;
   font-weight: bold;
   font-style: normal;
   font-size: 16px;
+  background: transparent;
 }
 
 #custom-tmux {
@@ -56,7 +58,6 @@
 
 #workspaces button.active {
     color: @waybar-foreground-black;
-    background: tranparent;
     border-bottom-color: @workspace-color;
     min-width: 40px;
     transition: all 0.3s ease-in-out;
@@ -64,6 +65,5 @@
 
 #workspaces button:hover {
     color: @waybar-foreground-black;
-    background: transparent;
     border-bottom-color: @workspace-color;
 }
