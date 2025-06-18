@@ -5,7 +5,7 @@
     "return-type": "json",
     "format": "{}",
     "env": {
-      "TMUX_MAX_SESSIONS": "3"
+      "TMUX_MAX_SESSIONS": "5"
     }
   },
   // Power Menu
