@@ -1,0 +1,10 @@
+{
+  "layer": "top",
+  "position": "top",
+  "include": [
+	"~/.config/waybar/modules-popup.json"
+  ],
+
+  "modules-left": ["custom/close"],
+  "modules-right": [],
+}

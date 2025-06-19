@@ -1,0 +1,10 @@
+{
+  "custom/popup-info": {
+    "format": "Popup Bar Active"
+  },
+
+  "custom/close": {
+    "format": "✕",
+    "on-click": "~/.config/waybar/scripts/toggle-popup.sh"
+  }
+}

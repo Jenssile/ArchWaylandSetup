@@ -38,6 +38,11 @@
     "format": " {}",
     "return-type": "json",
     "on-click": "alacritty -e radeontop"
-  }
+  },
 
+  "custom/menu": {
+    "format": "☰",
+    "on-click": "~/.config/waybar/scripts/toggle-popup.sh",
+    "tooltip": false
+  }
 }
