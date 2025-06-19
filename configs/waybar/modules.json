@@ -15,4 +15,29 @@
     "on-click": "wlogout -b 4",
     "tooltip": false
   },
+
+  "custom/cpu": {
+    "exec": "~/.config/waybar/scripts/cpu_status.sh 30 60",  // <low max> <medium max>
+    "interval": 5,
+    "format": " {}",
+    "return-type": "json",
+    "on-click": "alacritty -e btop"
+  },
+
+  "custom/mem": {
+    "exec": "~/.config/waybar/scripts/mem_status.sh 30 60",
+    "interval": 5,
+    "format": " {}",
+    "return-type": "json",
+    "on-click": "alacritty -e btop"
+  },
+
+  "custom/gpu": {
+    "exec": "~/.config/waybar/scripts/gpu_status.sh 30 60",
+    "interval": 5,
+    "format": " {}",
+    "return-type": "json",
+    "on-click": "alacritty -e radeontop"
+  }
+
 }

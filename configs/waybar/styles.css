@@ -4,6 +4,8 @@
 @define-color tmux-detached-color #fabd2f;
 @define-color tmux-none-color #fb4934;
 @define-color workspace-color #ffffff;
+@define-color medium-color #7CFC00;
+@define-color high-color #FF5555;
 
 * {
   font-family: "FiraCode Nerd Font Mono", monospace;
@@ -66,4 +68,25 @@
 #workspaces button:hover {
     color: @waybar-foreground-black;
     border-bottom-color: @workspace-color;
+}
+
+
+#custom-cpu,
+#custom-mem,
+#custom-gpu {
+  color: @waybar-foreground;
+  padding: 0 12px;
+  margin: 0 5px;
+  border-bottom: 2px solid transparent;
+}
+
+/* Appearance based on usage class */
+.low {
+  border-bottom: none;
+}
+.medium {
+  border-bottom: 2px solid @medium-color; /* green */
+}
+.high {
+  border-bottom: 2px solid @high-color; /* red */
 }
