@@ -1,0 +1,25 @@
+a second waybar to have clickable short cuts, but only have it shown by clicking icon on main waybar (dissmiss same way)
+
+
+tui for seeing a grph of my wight, and a waybar integration with an input field if possible that should how up once per day, and when it has gotten an input it should be hidden until the next day.
+
+
+disk usage on waybar for "/", "/usr", and "/steam" this indludes the % of space as well as how much is being read and writen to the disk.
+
+
+tui for changeing the brightness of my laptop screen, this should have a waybar integration telling me what the current brightness is
+
+
+hyprland shortcuts for attaching and detaching a terminal to the shown TMUX sessions.
+
+
+repo for obsidian notes, and a script to set up a new obsidian instance using the repo.
+
+
+waybar should show the amount of discord notifications
+
+
+waybar should show if there are any github/gitlab/azure issues, pull request, as well as other notifications form the plat forms if there are any.
+
+
+waybar show current spotify song
