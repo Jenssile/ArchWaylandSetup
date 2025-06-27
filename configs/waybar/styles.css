@@ -90,3 +90,22 @@
 .high {
   border-bottom: 2px solid @high-color; /* red */
 }
+
+
+#custom-dev-notifier {
+  font-family: "FiraCode Nerd Font Mono";
+  font-size: 14px;
+  padding: 0 6px;
+}
+
+#custom-dev-notifier.github {
+  color: #f1502f;
+}
+
+#custom-dev-notifier.gitlab {
+  color: #fc6d26;
+}
+
+#custom-dev-notifier.azure {
+  color: #0078d4;
+}
