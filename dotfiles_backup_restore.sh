@@ -108,7 +108,7 @@ log "🚀 Action started: ${ACTION:-menu} (no-menu: $NO_MENU, dry-run: $DRY_RUN)
 
 perform_backup() {
     if $NO_MENU; then
-        selected_dirs="${CONFIG_DIRS[@]}"
+        selected_dirs=("${CONFIG_DIRS[@]}")
     else
         echo "Choose directories to back up (TAB to select, ENTER to confirm):"
         selected_dirs=$(printf "%s\n" "${CONFIG_DIRS[@]}" | fzf --multi --prompt="Select directories: " --preview="ls -la {}")
@@ -118,15 +118,15 @@ perform_backup() {
     output="$BACKUP_DIR/arch_config_backup_$TIMESTAMP.tar.gz"
     echo
     echo "Would back up the following:"
-    echo "$selected_dirs"
+    printf "%s\n" "${selected_dirs[@]}"
     echo "Would create: $output"
-    echo "Command: tar -czf \"$output\" $selected_dirs"
 
     if ! $DRY_RUN; then
-        tar -czf "$output" $selected_dirs
+        tar -czf "$output" -C "$HOME" $(printf "%s\n" "${selected_dirs[@]}" | sed "s|^$HOME/||")
         [[ $? -eq 0 ]] && echo "✅ Backup complete." || echo "❌ Backup failed."
     else
         echo "Dry run — no archive created."
+        echo "Command would be: tar -czf \"$output\" -C \"$HOME\" [relative paths]"
     fi
 
     log "✅ Action completed: backup"
